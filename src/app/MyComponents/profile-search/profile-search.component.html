@@ -1,0 +1,12 @@
+<section class=" bg-sky-700 p-3">
+    <div class="flex justify-center align-middle">
+        <form action="" (ngSubmit)="onUsernameSubmit()">
+            <label for="userSearch"></label>
+            <input type="search" id="userSearch" title="enter username" placeholder="Enter username"
+                class=" border rounded-sm outline-none px-2 py-1 mr-2 border-black" [(ngModel)]="username"
+                [ngModelOptions]="{standalone: true}">
+            <button type="submit" title="search-button"
+                class="bg-white w-20 rounded-sm px-2 py-1 border-black">Search</button>
+        </form>
+    </div>
+</section>

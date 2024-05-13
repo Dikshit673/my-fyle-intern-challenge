@@ -1,0 +1,48 @@
+@if(reposApi){
+<section>
+    <div class="px-20">
+
+        <div>
+            <label for="repoNo">Choose no of Repository:</label>
+            <select name="repoNo" id="repoNo" class="border border-black rounded-sm ms-1"
+                (change)="mySelectbox($event)">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+
+        <div class="flex flex-wrap pt-8">
+            <div *ngFor="let item of reposApi|paginate:{itemsPerPage:totalRepo,currentPage:p}" class="w-6/12 py-4 px-3">
+                <div class="border-[1px] p-3 border-black h-[100%]">
+                    <h3 class="text-sky-700 text-2xl capitalize my-2">{{item.name}}</h3>
+                    @if(item.description){
+                    <p class="capitalize my-2">{{item.description}}</p>
+                    }@else {
+                    <p class="capitalize my-2">No description</p>
+                    }
+                    @if(item.language){
+                    <p class=" bg-sky-700 text-white w-20 text-xs p-1 rounded-md text-center my-2">{{item.language}}</p>
+                    }
+                </div>
+            </div>
+            <!-- |paginate:{itemsPerPage:totalRepo,currentPage:p} -->
+            <!-- @for (item of reposApi; track $index ){
+            <div class="w-6/12 py-4" [ngClass]="{'ps-5': $index%2!==0, 'pe-5': $index%2===0}">
+                <div class="border-[1px] p-3 border-black h-[100%]">
+                    <h3>{{item.name}}</h3>
+                    <p>description</p>
+                    <p>{{item.language}}</p>
+                </div>
+            </div>
+            } -->
+        </div>
+
+        <div class="flex justify-center align-middle pt-8">
+            <pagination-controls previousLabel="prev" nextLabel="next" (pageChange)="p=$event"></pagination-controls>
+        </div>
+
+    </div>
+</section>
+}
