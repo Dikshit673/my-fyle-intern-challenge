@@ -16,6 +16,7 @@ import { HomeComponent } from './MyComponents/home/home.component';
 import { ProfileHerosComponent } from './MyComponents/profile-heros/profile-heros.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { SkeletonLoaderComponent } from './MyComponents/skeleton-loader/skeleton-loader.component';
+import { RouterOutlet } from '@angular/router';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { SkeletonLoaderComponent } from './MyComponents/skeleton-loader/skeleton
     NgxPaginationModule,
     HttpClientModule,
     FormsModule,
-    NgxSkeletonLoaderModule
+    NgxSkeletonLoaderModule,
+    RouterOutlet
   ],
   providers: [
     provideClientHydration(),
