@@ -1,17 +1,19 @@
 <app-profile-search (usernameEntered)="userSearch($event)"></app-profile-search>
 
 @if(herosError|| reposError){
-<section>
-    <div>
+<section class="border border-black m-2">
+    <div class=" bg-red-300  m-2">
         {{herosError}}
     </div>
-    <div>
+    <div class="bg-red-300 m-2">
         {{reposError}}
     </div>
 </section>
 }
 
-@else{
-<app-skeleton-loader *ngIf="!loaded"></app-skeleton-loader>
-<app-profile-body *ngIf="loaded" [herosApi]="herosData" [reposApi]="reposData"></app-profile-body>
+@else if (showbody) {
+<section class="border border-black m-2">
+    <app-skeleton-loader *ngIf="!loaded"></app-skeleton-loader>
+    <app-profile-body *ngIf="loaded" [herosApi]="herosData" [reposApi]="reposData"></app-profile-body>
+</section>
 }

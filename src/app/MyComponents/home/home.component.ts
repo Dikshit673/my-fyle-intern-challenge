@@ -13,16 +13,18 @@ export class HomeComponent implements OnInit {
   herosError: any;
   reposError: any;
   loaded: boolean = true;
+  showbody: boolean = false;
 
   ngOnInit(): void { }
 
   userSearch(username: string) {
     if (username) {
       this.loaded = false;
+      this.showbody = true;
       this.usersService.getUserDetails(username).subscribe(
         {
           next: (data: any) => {
-            // console.log(data);
+            console.log(data);
             this.herosData = data;
             if (this.herosData) {
               this.loaded = true;
@@ -44,7 +46,7 @@ export class HomeComponent implements OnInit {
       this.usersService.getUserRepos(username).subscribe(
         {
           next: (data: any) => {
-            // console.log(data);
+            console.log(data);
             this.reposData = data;
             if (this.reposData) {
               this.loaded = true;
