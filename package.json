@@ -27,6 +27,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@liquid-js/angular-cli-ghpages": "^2.0.0-beta.2",
     "express": "^4.18.2",
     "ngx-pagination": "^6.0.3",
     "ngx-skeleton-loader": "^9.0.0",
