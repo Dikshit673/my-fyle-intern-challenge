@@ -10,6 +10,7 @@ export class ProfileReposComponent implements OnInit {
   @Input() reposApi: any;
   p: number = 1;
   totalRepo: number = 10;
+  maxSize: number = 4;
 
   constructor() { }
 

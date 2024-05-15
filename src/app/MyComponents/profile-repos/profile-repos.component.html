@@ -27,20 +27,11 @@
                     }
                 </div>
             </div>
-            <!-- |paginate:{itemsPerPage:totalRepo,currentPage:p} -->
-            <!-- @for (item of reposApi; track $index ){
-            <div class="w-6/12 py-4" [ngClass]="{'ps-5': $index%2!==0, 'pe-5': $index%2===0}">
-                <div class="border-[1px] p-3 border-black h-[100%]">
-                    <h3>{{item.name}}</h3>
-                    <p>description</p>
-                    <p>{{item.language}}</p>
-                </div>
-            </div>
-            } -->
         </div>
 
         <div class="flex justify-center align-middle pt-8">
-            <pagination-controls previousLabel="prev" nextLabel="next" (pageChange)="p=$event"></pagination-controls>
+            <pagination-controls previousLabel="prev" nextLabel="next" [maxSize]="maxSize"
+                (pageChange)="p=$event"></pagination-controls>
         </div>
 
     </div>
